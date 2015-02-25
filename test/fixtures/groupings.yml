@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grouping_set_id: 
+  member1_id: 
+  member2_id: 
+  member3_id: 
+  member4_id: 
+  member5_id: 
+
+two:
+  grouping_set_id: 
+  member1_id: 
+  member2_id: 
+  member3_id: 
+  member4_id: 
+  member5_id: 

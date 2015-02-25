@@ -20,13 +20,17 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.where(:user => current_user, :id => params[:id]).first
+    @group = current_group
     @new_member = Member.new(:group => @group)
   end
 
   private
     def new_group
       Group.new(:user => current_user)
+    end
+
+    def current_group
+      Group.where(:user => current_user, :id => params[:id]).first
     end
 
     def group_params

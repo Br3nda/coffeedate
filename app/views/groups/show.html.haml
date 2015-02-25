@@ -4,6 +4,21 @@
     \>
   = @group.title
 
+%h2 Sets of coffee dates
+
+%ul
+  - @group.grouping_sets.each do |set|
+    %li
+      = link_to set.displayed_title, group_grouping_set_path(set.group, set)
+  - if @group.grouping_sets.empty?
+    %li
+      %i None so far!
+
+  %li
+    = link_to "Create a new set of coffee dates", new_group_grouping_set_path(@group)
+
+%h2 Members
+
 %ul
   - @group.members.each do |member|
     %li 
@@ -15,6 +30,6 @@
   %li
     = form_for [@group, @new_member] do |f|
       = f.label :email
-      = f.text_field :email
+      = f.email_field :email
 
       = f.submit

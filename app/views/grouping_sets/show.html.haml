@@ -1,0 +1,31 @@
+%h1 
+  %small
+    = link_to "Your Groups", groups_path
+    \>
+  %small
+    = link_to @set.group.title, group_path(@set.group)
+    \>
+  = @set.displayed_title
+
+%p
+  Set up 
+  = @set.created_at
+  with
+  = @set.member_count
+  people from
+  = link_to @set.group.title, group_path(@set.group)
+
+%p.description
+  = @set.description
+
+%h2 Groups
+
+%ul
+  - @set.groupings.each do |grouping|
+    %li 
+      %ul
+        - grouping.members.each do |member|
+          %li
+            = member.email
+
+      %a.btn send reminder

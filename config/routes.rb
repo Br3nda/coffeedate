@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :groups do
     resources :members do
     end
+
+    resources :grouping_sets do
+    end
   end
 
   # Example of regular route:

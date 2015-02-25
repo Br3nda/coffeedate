@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225025032) do
+ActiveRecord::Schema.define(version: 20150225030628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "grouping_sets", force: true do |t|
+    t.integer  "group_id"
+    t.integer  "group_size"
+    t.string   "title"
+    t.string   "description"
+    t.integer  "member_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "grouping_sets", ["group_id"], name: "index_grouping_sets_on_group_id", using: :btree
+
+  create_table "groupings", force: true do |t|
+    t.integer  "grouping_set_id"
+    t.integer  "member1_id"
+    t.integer  "member2_id"
+    t.integer  "member3_id"
+    t.integer  "member4_id"
+    t.integer  "member5_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "groupings", ["grouping_set_id"], name: "index_groupings_on_grouping_set_id", using: :btree
+  add_index "groupings", ["member1_id"], name: "index_groupings_on_member1_id", using: :btree
+  add_index "groupings", ["member2_id"], name: "index_groupings_on_member2_id", using: :btree
+  add_index "groupings", ["member3_id"], name: "index_groupings_on_member3_id", using: :btree
+  add_index "groupings", ["member4_id"], name: "index_groupings_on_member4_id", using: :btree
+  add_index "groupings", ["member5_id"], name: "index_groupings_on_member5_id", using: :btree
 
   create_table "groups", force: true do |t|
     t.integer  "user_id"

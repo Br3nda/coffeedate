@@ -1,0 +1,45 @@
+%h1 
+  %small
+    = link_to "Your Groups", groups_path
+    \>
+  %small
+    = link_to @set.group.title, group_path(@set.group)
+    \>
+  Create a new set of coffee dates
+
+= form_for [@set.group, @set] do |f|
+  %li
+    %label People
+
+    = @set.group.members.count
+    from
+    = link_to @set.group.title, group_path(@set.group)
+
+  %li
+    = f.label :group_size
+
+    %ul
+      %li
+        = f.radio_button :group_size, 2
+        = f.label :group_size_2, '2'
+
+      %li
+        = f.radio_button :group_size, 3, :checked => true
+        = f.label :group_size_3, '3'
+
+      %li
+        = f.radio_button :group_size, 4
+        = f.label :group_size_4, '4'
+
+  %li
+    = f.label :title
+    = f.text_field :title
+    %i.optional (optional)
+
+  %li
+    = f.label :description
+    = f.text_area :description
+    %i.optional (optional)
+
+  %li
+    = f.submit
