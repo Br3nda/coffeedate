@@ -8,8 +8,8 @@
       = link_to "delete", group_path(group), :method => :delete
 
   %li
-  = form_for @new_group do |f|
-    = f.label :title
-    = f.text_field :title
+    = form_for @new_group do |f|
+      = f.label :title
+      = f.text_field :title
 
-    = f.submit
+      = f.submit

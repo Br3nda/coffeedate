@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :groups do
+    resources :members do
+    end
   end
 
   # Example of regular route:

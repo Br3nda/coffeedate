@@ -5,4 +5,16 @@
   = @group.title
 
 %ul
-  %li ...
+  - @group.members.each do |member|
+    %li 
+      %code
+        = member.email
+
+      = link_to "delete", group_member_path(member.group, member), :method => :delete
+
+  %li
+    = form_for [@group, @new_member] do |f|
+      = f.label :email
+      = f.text_field :email
+
+      = f.submit

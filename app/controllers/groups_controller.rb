@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.where(:user => current_user, :id => params[:id]).first
+    @new_member = Member.new(:group => @group)
   end
 
   private
