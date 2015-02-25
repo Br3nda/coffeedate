@@ -2,8 +2,14 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  # http://jevon.org/wiki/Google_OAuth2_with_Ruby_on_Rails
+  get "/auth/google_login/callback" => "sessions#create"
+  get "/auth/google_login", :as => :signin
+  get "/signout" => "sessions#destroy", :as => :signout
+
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get 'welcome/index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

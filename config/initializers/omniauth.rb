@@ -1,0 +1,8 @@
+# http://jevon.org/wiki/Google_OAuth2_with_Ruby_on_Rails
+
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :google_oauth2,
+    ENV['OAUTH_CLIENT_ID'],
+    ENV['OAUTH_CLIENT_SECRET'],
+    {name: "google_login", approval_prompt: ''}
+end

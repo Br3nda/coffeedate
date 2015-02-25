@@ -1,0 +1,11 @@
+%h1 Coffee Date
+
+%h2.tagline
+  Set up regular coffee meetings with your staff, clients or friends.
+
+- if current_user
+  = link_to "Sign out", signout_path
+  = current_user.name
+  = current_user.inspect
+- else
+  = link_to "Sign in with Google", signin_path
