@@ -4,8 +4,8 @@
   Set up regular coffee meetings with your staff, clients or friends.
 
 - if current_user
+  Hi, #{current_user.name}!
+  = link_to "Your groups", groups_path
   = link_to "Sign out", signout_path
-  = current_user.name
-  = current_user.inspect
 - else
   = link_to "Sign in with Google", signin_path
