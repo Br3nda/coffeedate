@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
-  resources :groups do
-    resources :members do
+  resources :groups, :only => [:index, :create, :destroy, :show] do
+    resources :members, :only => [:create, :destroy] do
     end
 
-    resources :grouping_sets do
+    resources :grouping_sets, :only => [:new, :create, :show] do
     end
   end
 

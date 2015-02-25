@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     @group.user = current_user
     @group.save
 
-    redirect_to groups_path
+    redirect_to group_path @group
   end
 
   def destroy

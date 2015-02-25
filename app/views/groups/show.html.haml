@@ -26,6 +26,9 @@
         = member.email
 
       = link_to "delete", group_member_path(member.group, member), :method => :delete
+  - if @group.members.empty?
+    %li
+      %i You should add at least one e-mail address!
 
   %li
     = form_for [@group, @new_member] do |f|
