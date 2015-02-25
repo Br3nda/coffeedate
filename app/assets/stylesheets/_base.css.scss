@@ -1,0 +1,21 @@
+/* root styles */
+
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic);
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 20px;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'PT Serif', serif;
+}
+
+pre, code {
+  font-family: 'Consolas', 'Consolas MS', monospace;
+}
