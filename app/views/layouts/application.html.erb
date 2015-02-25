@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="controller-<%= controller.controller_name %> action-<%= controller.action_name %>">
+  <%= yield %>
+</div>
 
 </body>
 </html>
